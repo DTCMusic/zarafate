@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effektli Zarafat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #blackout {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            z-index: 9999;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center; margin-top: 50px;">Zarafat etmək üçün buraya bas!</h1>
+
+    <button onclick="triggerEffects()">Buraya bas</button>
+
+    <div id="blackout"></div>
+
+    <script>
+        function triggerEffects() {
+            // Ekranı qara edirik
+            document.getElementById('blackout').style.display = 'block';
+
+            // Saxta virus bildirişi
+            setTimeout(function() {
+                alert("Diqqət! Telefonunuzda virus tapıldı! Zəhmət olmasa telefonu bağlayın!");
+            }, 2000); // 2 saniyə sonra virus mesajı
+
+            // Vibrasiya
+            if (navigator.vibrate) {
+                navigator.vibrate([500, 300, 500, 300]); // Titrəmə effekti
+            }
+
+            // Kamera işə düşüb kimi bildiriş
+            setTimeout(function() {
+                alert("Kamera aktivləşdi və çəkiliş başladı!");
+            }, 4000); // 4 saniyə sonra kamera mesajı
+
+            // Sonsuz dövr ilə telefonun donmasını təmin et
+            while(true) {} // Bu kod səhifəni donduracaq
+        }
+    </script>
+</body>
+</html>
